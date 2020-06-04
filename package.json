@@ -1,0 +1,47 @@
+{
+  "name": "@jerexyz/postcss-plugin-prefix",
+  "version": "1.0.0",
+  "description": "PostCSS plugin postcss plugin for add css selector prefix",
+  "keywords": [
+    "postcss",
+    "css",
+    "postcss-plugin",
+    "postcss"
+  ],
+  "scripts": {
+    "test": "jest",
+    "lint":"eslint .",
+    "pub": "npm publish --registry http://registry.npmjs.org --access public"
+  },
+  "author": "Jared <xyzjere@gmail.com>",
+  "license": "MIT",
+  "repository": "jerexyz/postcss-plugin-prefix",
+  "dependencies": {
+    "postcss": "^7.0.18"
+  },
+  "devDependencies": {
+    "@logux/eslint-config": "^39.0.3",
+    "eslint": "^7.1.0",
+    "eslint-config-postcss": "^4.0.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-es5": "^1.4.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^23.13.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prefer-let": "^1.0.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-unicorn": "^20.1.0",
+    "jest": "^26.0.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint-config-postcss"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
