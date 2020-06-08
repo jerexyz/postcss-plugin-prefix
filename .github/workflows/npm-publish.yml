@@ -25,8 +25,14 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
+          registry-url: https://registry.npmjs.org
       - run: npm ci
+      - name: Register Token
+        run: |
+          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > /home/runner/work/_temp/.npmrc
+          echo "_auth=$NODE_AUTH_TOKEN" >>  /home/runner/work/_temp/.npmrc
+          echo "email=<skymine96@gmail.com>" >>  /home/runner/work/_temp/.npmrc
+          echo "always-auth=true" >>  /home/runner/work/_temp/.npmrc
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
