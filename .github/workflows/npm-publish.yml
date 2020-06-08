@@ -4,6 +4,8 @@
 name: Node.js Package
 
 on:
+  push:
+    branches: [ master ]
   release:
     types: [created]
 
@@ -29,11 +31,11 @@ jobs:
       - run: npm ci
       - name: Register Token
         run: |
-          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > /home/runner/work/_temp/.npmrc
-          echo "_auth=$NODE_AUTH_TOKEN" >>  /home/runner/work/_temp/.npmrc
-          echo "email=<skymine96@gmail.com>" >>  /home/runner/work/_temp/.npmrc
-          echo "always-auth=true" >>  /home/runner/work/_temp/.npmrc
-      - run: npm publish --access public
+          echo "//registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN" > .npmrc
+          echo "_auth=$NODE_AUTH_TOKEN" >>  .npmrc
+          echo "email=<skymine96@gmail.com>" >>  .npmrc
+          echo "always-auth=true" >>  .npmrc
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
