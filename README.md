@@ -1,4 +1,4 @@
-![](https://github.com/actions/hello-world/workflows/.github/workflows/main.yml/badge.svg)
+![](https://github.com/jerexyz/postcss-plugin-prefix/workflows/Test&Lint/badge.svg)
 
 # PostCSS Plugin Prefix
 
