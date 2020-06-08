@@ -1,2 +1,11 @@
-- name: Jest Code Coverage Report
-  uses: ziishaned/jest-reporter-action@0.1.1
+name: CI
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install modules
+      run: yarn
+    - name: Run tests
+      run: yarn test
